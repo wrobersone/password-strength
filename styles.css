@@ -1,0 +1,62 @@
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: #0B486B;
+    color: azure;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
+.strength-meter {
+    height: 2rem;
+    width: 90%;
+    border-radius: 1rem;
+    border: 3px solid #1e2c76;
+    margin: 0 auto;
+    position: relative;
+    overflow: hidden;
+}
+
+.strength-meter::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    height: 100%;
+    /* Convert the value to a percentage between 1 and 100 */
+    /* Example --strength: 20; */
+    width: calc(1% * var(--strength, 0)); 
+    background-color: hsl(202, 81%, 67%);
+    /* The percentage width animates */
+    transition: width 200ms;
+}
+
+.password-input {
+    width: 90%;
+    padding: .5rem 1rem;
+    background-color: hsl(202, 81%, 25%);
+    color: white;
+    border: 1px solid hsl(230, 59%, 29%);
+    margin-bottom: 1rem;
+    outline: none;
+    border-radius: .3rem;
+    text-align: center;
+}
+
+.password-input:focus {
+    border-color: hsl(230, 59%, 70%);
+}
+
+.requirements {
+    border: 1px solid hsl(202, 81%, 25%);
+    padding: 1rem 2rem;
+}
+
+.reasons > * {
+    margin-top: .5rem;
+    color: hsl(230, 59%, 80%);
+    font-size: 24px;
+}
